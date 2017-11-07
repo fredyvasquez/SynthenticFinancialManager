@@ -1,0 +1,115 @@
+﻿@model SynthenticFinancialManager.Models.BankTX
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>BankTX</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.step)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.step)
+            @Html.ValidationMessageFor(model => model.step)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.type)
+            @Html.ValidationMessageFor(model => model.type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.amount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.amount)
+            @Html.ValidationMessageFor(model => model.amount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nameOrig)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nameOrig)
+            @Html.ValidationMessageFor(model => model.nameOrig)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.oldbalanceOrg)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.oldbalanceOrg)
+            @Html.ValidationMessageFor(model => model.oldbalanceOrg)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.newbalanceOrig)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.newbalanceOrig)
+            @Html.ValidationMessageFor(model => model.newbalanceOrig)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nameDest)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nameDest)
+            @Html.ValidationMessageFor(model => model.nameDest)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.oldbalanceDest)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.oldbalanceDest)
+            @Html.ValidationMessageFor(model => model.oldbalanceDest)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.newbalanceDest)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.newbalanceDest)
+            @Html.ValidationMessageFor(model => model.newbalanceDest)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.isFraud)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.isFraud)
+            @Html.ValidationMessageFor(model => model.isFraud)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.isFlaggedFraud)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.isFlaggedFraud)
+            @Html.ValidationMessageFor(model => model.isFlaggedFraud)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,118 @@
+﻿@model IEnumerable<SynthenticFinancialManager.Models.BankTX>
+
+@{
+    ViewBag.Title = "Transactions";
+}
+
+<h2>Index</h2>
+
+<p>
+ 
+</p>
+
+@using (Html.BeginForm()){    
+         <p> 
+         <table>
+             <tr>
+                 <td>Destination Customer: @Html.TextBox("searchString")</td>
+                 <td>Is marked as fraud? @Html.CheckBox("fraud")</td>
+                 <td><input type="submit" value="Apply filters" /></td>
+                 <td>
+                    @if (User.IsInRole("Assistant") || User.IsInRole("Administrator"))
+                    {
+                        @Html.ActionLink("Register bank transactions", "Create")  
+                    }
+
+                 </td>
+             </tr>
+
+         </table></p> 
+        } 
+
+<table class="blueTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.step)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nameOrig)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.oldbalanceOrg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.newbalanceOrig)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nameDest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.oldbalanceDest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.newbalanceDest)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isFraud)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isFlaggedFraud)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.step)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nameOrig)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.oldbalanceOrg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.newbalanceOrig)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nameDest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.oldbalanceDest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.newbalanceDest)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isFraud)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isFlaggedFraud)
+        </td>
+        <td>
+        @if (User.IsInRole("Superintendent") || User.IsInRole("Administrator"))
+        {
+            @Html.ActionLink("Edit", "Edit", new { id=item.TxId }) 
+        }
+        @if (User.IsInRole("Administrator"))
+        {
+            @Html.ActionLink("Delete", "Delete", new { id=item.TxId })
+        }
+        </td>
+    </tr>
+}
+
+</table>

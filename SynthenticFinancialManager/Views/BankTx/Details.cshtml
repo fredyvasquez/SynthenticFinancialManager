@@ -1,0 +1,92 @@
+﻿@model SynthenticFinancialManager.Models.BankTX
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BankTX</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.step)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.step)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.amount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.amount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nameOrig)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nameOrig)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.oldbalanceOrg)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.oldbalanceOrg)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.newbalanceOrig)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.newbalanceOrig)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nameDest)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nameDest)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.oldbalanceDest)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.oldbalanceDest)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.newbalanceDest)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.newbalanceDest)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.isFraud)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.isFraud)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.isFlaggedFraud)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.isFlaggedFraud)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TxId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

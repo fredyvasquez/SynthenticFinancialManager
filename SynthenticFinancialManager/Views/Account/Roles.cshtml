@@ -1,0 +1,29 @@
+﻿@model SynthenticFinancialManager.Models.RoleModel
+@{
+    ViewBag.Title = "Roles";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Manage Roles</h2>
+</hgroup>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.RoleName)
+                @Html.TextBoxFor(m => m.RoleName)
+            </li>
+        </ol>
+        <input type="submit" value="Create Role" />
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

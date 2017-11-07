@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+        DESCRIPTION
+
+Build a .Net web app that allow register bank transactions, mark a transaction as a fraud and search transactions according to one or more search criteria. You can use the dataset: https://www.kaggle.com/ntnu-testimon/paysim1 posted on Kaggle. It is described there.
+
+
+PART I
+
+Build a simple web application with a software architectural pattern Model–view–controller (MVC) to allow a user register transactions, mark a transaction as a fraud and search transactions according to the criteria listed below. Do not pay much attention to the UI/design side of things. The focus of the test should be back-end side of things. Be sure to allow these set of actions only to authenticated users and to users that match the following roles:
+
+	
+Search criteria:
+
+IsFraud
+NameDest
+TransactionDate
+
+Feel free to use the authentication method that you consider most appropriate.
+
+(Framework versión: Created with 4.5)
+
+    </p>
+
+    <p>
+        PART II
+
+Create a simple Web Service (based on SOAP or REST) that allows the consumer of such Web Service to get or post the transaction information. You need to include a security mechanism to each web method to avoid unauthorized requests. You can use Entity Framework or Dapper as the ORM to allow the comunication between the Web Service and the Database.
+
+Feel free to serialize the Web Service responses in JSON or XML.
+
+    </p>
+
+    <p>
+PART III
+
+Propose and implement a consistent relational database design in which will be stored the transaction data. You must populate your database with the Kaggle dataset. For this, you can use any tool of your choice to build an ETL project in which the data loading process can be evidenced.
+
+Feel free to use the database engine with which you feel more familiar.
+
+Finally, it is requested to create a report in excel, csv, etc in which it shows the total sum of fraudulent transactions by type of transaction vs the total sum of non-fraudulent transactions, also by type of transaction. (Amount column)
+
+DELIVERABLES
+
+Complete source code (.Net and ETL Project) and script of database in a public repository on github or bitbucket. If not possible please provide a .zip file but points will be deducted.
+Readme into the repository with all the steps to deploy and run the 3 components. (Web app, web service and database model with ETL Project and report) and your contact information as a solution owner.
+
+
+
+All code should be well documented (each method and class)
+Unit tests for domain model
+Diagrams: 
+- 	Classes diagram of domain (business logic) model
+-	E-R diagram
+-	General system diagram (Components diagram)
+
+Bonus points: will be awarded for adding 1 architectural pattern and at least 2 SOLID principles.
+    </p>
+</article>
+
+@*<aside>
+    <h3>Aside Title</h3>
+    <p>
+        Use this area to provide additional information.
+    </p>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>*@

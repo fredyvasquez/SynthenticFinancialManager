@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Transactions";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                
+            </p>
+        </div>
+    </section>
+}
+<h3>We suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>View and search over the full list of transactions</h5>
+        Here  you're able to view all transactions in the database and Search transactions according to the criteria
+        <a href="./BankTx/">View Transactions</a>
+    </li>
+
+    <li class="two">
+        <h5>Create a new Transaction</h5>
+        You can create new transactions.
+        <a href="./BankTx/Create">Create a new transaction</a>
+    </li>
+
+    <li class="three">
+        <h5>Mark a Transaction as a fraud</h5>
+        Superintendent users can mark transactions as fraud
+        <a href="./BankTx">Search and mark…</a>
+    </li>
+</ol>
