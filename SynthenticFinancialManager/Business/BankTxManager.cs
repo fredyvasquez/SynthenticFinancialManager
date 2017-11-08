@@ -19,22 +19,22 @@ namespace SynthenticFinancialManager.Business
         //IsFraud
         //NameDest
         // GET: /BankTx/
-        public List<BankTX> Search(string searchString, bool? fraud)
+        public List<BankTXModel> Search(string searchString, bool? fraud)
         {
             var transactions = from m in db.BankTXs
                          select m;
 
             if (!String.IsNullOrEmpty(searchString) && fraud == true)
             {
-                transactions = transactions.Where(s => s.nameDest.Contains(searchString) && s.isFraud.Equals(fraud == true));
+                transactions = transactions.Where(s => s.NameDest.Contains(searchString) && s.IsFraud.Equals(fraud == true));
             }
             if (!String.IsNullOrEmpty(searchString) && fraud != true)
             {
-                transactions = transactions.Where(s => s.nameDest.Contains(searchString));
+                transactions = transactions.Where(s => s.NameDest.Contains(searchString));
             }
             else if (fraud == true)
             {
-                transactions = transactions.Where(s => s.isFraud.Equals(fraud == true));
+                transactions = transactions.Where(s => s.IsFraud.Equals(fraud == true));
             }
             //else
             //    transactions = transactions.Where(s => s.TxId.Equals(-1));
@@ -45,16 +45,16 @@ namespace SynthenticFinancialManager.Business
         //
         // GET: /BankTx/Details/5
 
-        public BankTX Details(int id = 0)
+        public BankTXModel Details(int id = 0)
         {
-            BankTX banktx = db.BankTXs.Find(id);
+            BankTXModel banktx = db.BankTXs.Find(id);
 
             return banktx;
         }
 
         //
         // POST: /BankTx/Create
-        public BankTX Create(BankTX banktx)
+        public BankTXModel Create(BankTXModel banktx)
         {
             db.BankTXs.Add(banktx);
             db.SaveChanges();
@@ -64,16 +64,16 @@ namespace SynthenticFinancialManager.Business
 
         //
         // GET: /BankTx/Edit/5
-        public BankTX Get(int id = 0)
+        public BankTXModel Get(int id = 0)
         {
-            BankTX banktx = db.BankTXs.Find(id);
+            BankTXModel banktx = db.BankTXs.Find(id);
 
             return banktx;
         }
 
         //
         // POST: /BankTx/Edit/5
-        public BankTX Get(BankTX banktx)
+        public BankTXModel Get(BankTXModel banktx)
         {
             db.Entry(banktx).State = EntityState.Modified;
             db.SaveChanges();
@@ -86,7 +86,7 @@ namespace SynthenticFinancialManager.Business
         // POST: /BankTx/Delete/5
         public void Delete(int id)
         {
-            BankTX banktx = db.BankTXs.Find(id);
+            BankTXModel banktx = db.BankTXs.Find(id);
             db.BankTXs.Remove(banktx);
             db.SaveChanges();
         }

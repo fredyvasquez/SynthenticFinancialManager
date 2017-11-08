@@ -28,65 +28,65 @@ namespace SynthenticFinancialManager.Tests.Controllers
         [TestMethod]
         public void Create()
         {
-            BankTX bankModel = new BankTX()
+            BankTXModel bankModel = new BankTXModel()
             {
-                amount = 123456,
-                nameDest = "nameDest",
-                nameOrig = "nameOrig",
-                newbalanceDest =  1234,
-                oldbalanceDest = 1233,
-                oldbalanceOrg = 1232,
-                newbalanceOrig = 1231,
-                step = 1,
-                type = "Test"
+                Amount = 123456,
+                NameDest = "nameDest",
+                NameOrig = "nameOrig",
+                NewbalanceDest =  1234,
+                OldbalanceDest = 1233,
+                OldbalanceOrg = 1232,
+                NewbalanceOrig = 1231,
+                Step = 1,
+                Type = "Test"
             };
             BankTxController controller = new BankTxController();
             // Act
             ViewResult result = controller.Create(bankModel) as ViewResult;
 
             BankTxManager txManager = new BankTxManager();
-            BankTX bankModelResult = txManager.Details(bankModel.TxId);
+            BankTXModel bankModelResult = txManager.Details(bankModel.TxId);
  
-            Assert.AreEqual(bankModelResult.type, bankModel.type);
-            Assert.AreEqual(bankModelResult.step, bankModel.step);
-            Assert.AreEqual(bankModelResult.nameOrig, bankModel.nameOrig);
-            Assert.AreEqual(bankModelResult.newbalanceDest, bankModel.newbalanceDest);
+            Assert.AreEqual(bankModelResult.Type, bankModel.Type);
+            Assert.AreEqual(bankModelResult.Step, bankModel.Step);
+            Assert.AreEqual(bankModelResult.NameOrig, bankModel.NameOrig);
+            Assert.AreEqual(bankModelResult.NewbalanceDest, bankModel.NewbalanceDest);
         }
 
         [TestMethod]
         public void Edit()
         {
             
-            BankTX bankModel = new BankTX()
+            BankTXModel bankModel = new BankTXModel()
             {
-                amount = 123456,
-                nameDest = "editTest",
-                nameOrig = "editTest",
-                newbalanceDest =  1234,
-                oldbalanceDest = 1233,
-                oldbalanceOrg = 1232,
-                newbalanceOrig = 1231,
-                step = 1,
-                type = "editTest"
+                Amount = 123456,
+                NameDest = "editTest",
+                NameOrig = "editTest",
+                NewbalanceDest =  1234,
+                OldbalanceDest = 1233,
+                OldbalanceOrg = 1232,
+                NewbalanceOrig = 1231,
+                Step = 1,
+                Type = "editTest"
             };
 
             BankTxManager txManager = new BankTxManager();
-            BankTX bankModelResult = txManager.Create(bankModel);
+            BankTXModel bankModelResult = txManager.Create(bankModel);
  
 
             BankTxController controller = new BankTxController();
             // Act
             ViewResult result = controller.Edit(bankModelResult.TxId) as ViewResult;
-            BankTX model = result.Model as BankTX;
-            Assert.AreEqual(model.type, "editTest");
+            BankTXModel model = result.Model as BankTXModel;
+            Assert.AreEqual(model.Type, "editTest");
 
-            model.type = "Edited";
+            model.Type = "Edited";
             controller.Edit(model);
 
-            BankTX banktx = txManager.Details(model.TxId);
+            BankTXModel banktx = txManager.Details(model.TxId);
 
-            Assert.AreEqual(model.type, "Edited");
-            Assert.AreNotEqual(model.type, banktx.type);
+            Assert.AreEqual(model.Type, "Edited");
+            Assert.AreNotEqual(model.Type, banktx.Type);
         }
 
          
@@ -94,31 +94,31 @@ namespace SynthenticFinancialManager.Tests.Controllers
         [TestMethod]
         public void MarkAsFraud()
         {
-            BankTX bankModel = new BankTX()
+            BankTXModel bankModel = new BankTXModel()
             {
-                amount = 123456,
-                nameDest = "MarkAsFraudTest",
-                nameOrig = "MarkAsFraudTest",
-                newbalanceDest = 1234,
-                oldbalanceDest = 1233,
-                oldbalanceOrg = 1232,
-                newbalanceOrig = 1231,
-                step = 1,
-                type = "MarkAsFraudTest",
-                isFlaggedFraud = false
+                Amount = 123456,
+                NameDest = "MarkAsFraudTest",
+                NameOrig = "MarkAsFraudTest",
+                NewbalanceDest = 1234,
+                OldbalanceDest = 1233,
+                OldbalanceOrg = 1232,
+                NewbalanceOrig = 1231,
+                Step = 1,
+                Type = "MarkAsFraudTest",
+                IsFlaggedFraud = false
             };
 
             BankTxManager txManager = new BankTxManager();
-            BankTX bankModelResult = txManager.Create(bankModel);
+            BankTXModel bankModelResult = txManager.Create(bankModel);
 
 
             BankTxController controller = new BankTxController();
             // Act
             controller.MarkAsFraud(bankModelResult);
 
-            BankTX banktx = txManager.Get(bankModelResult.TxId);
+            BankTXModel banktx = txManager.Get(bankModelResult.TxId);
 
-            Assert.AreEqual(banktx.isFlaggedFraud, true);
+            Assert.AreEqual(banktx.IsFlaggedFraud, true);
         }
 
 

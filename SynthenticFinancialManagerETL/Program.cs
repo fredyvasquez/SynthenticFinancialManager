@@ -22,7 +22,7 @@ namespace SynthenticFinancialManager
 
                     try
                     {
-                        IList<BankTX> txList = new List<BankTX>();
+                        IList<BankTXModel> txList = new List<BankTXModel>();
 
                         using (StreamReader sr = new StreamReader(path))
                         {
@@ -32,7 +32,7 @@ namespace SynthenticFinancialManager
                                 if (line.Length == 0)
                                     continue;
 
-                                BankTX tx = ProcessTransaction(line);
+                                BankTXModel tx = ProcessTransaction(line);
                                 if (tx != null)
                                     txList.Add(tx);
                             }
@@ -40,7 +40,7 @@ namespace SynthenticFinancialManager
                         System.Console.WriteLine(string.Format("Read {0} transactions from file", txList.Count));
 
 
-                        var objBulk = new SynthenticFinancialManagerETL<BankTX>()
+                        var objBulk = new SynthenticFinancialManagerETL<BankTXModel>()
                             {
                                 TXList = txList,
                                 TableName = "BankTX",
@@ -67,24 +67,24 @@ namespace SynthenticFinancialManager
             }
         }
 
-        private static BankTX ProcessTransaction(string tx)
+        private static BankTXModel ProcessTransaction(string tx)
         {
             string[] txParts = tx.Trim().Split(',');
             try
             {
-                BankTX bankTX = new BankTX()
+                BankTXModel bankTX = new BankTXModel()
                 {
-                    step = Convert.ToInt32(txParts[0]),
-                    type = txParts[1],
-                    amount = Convert.ToSingle(txParts[2]),
-                    nameOrig = txParts[3],
-                    oldbalanceOrg = Convert.ToSingle(txParts[4]),
-                    newbalanceOrig = Convert.ToSingle(txParts[5]),
-                    nameDest = txParts[6],
-                    oldbalanceDest = Convert.ToSingle(txParts[7]),
-                    newbalanceDest = Convert.ToSingle(txParts[8]),
-                    isFraud = Convert.ToInt32(txParts[9]) == 1,
-                    isFlaggedFraud = Convert.ToInt32(txParts[10]) == 1
+                    Step = Convert.ToInt32(txParts[0]),
+                    Type = txParts[1],
+                    Amount = Convert.ToSingle(txParts[2]),
+                    NameOrig = txParts[3],
+                    OldbalanceOrg = Convert.ToSingle(txParts[4]),
+                    NewbalanceOrig = Convert.ToSingle(txParts[5]),
+                    NameDest = txParts[6],
+                    OldbalanceDest = Convert.ToSingle(txParts[7]),
+                    NewbalanceDest = Convert.ToSingle(txParts[8]),
+                    IsFraud = Convert.ToInt32(txParts[9]) == 1,
+                    IsFlaggedFraud = Convert.ToInt32(txParts[10]) == 1
                 };
 
                 return bankTX;

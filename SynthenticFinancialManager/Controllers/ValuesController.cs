@@ -22,9 +22,9 @@ namespace SynthenticFinancialManager.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [Authorize(Roles = "Administrator, Superintendent")]
-        public IList<BankTX> Get(string id)
+        public IList<BankTXModel> Get(string id)
         {
-            IList<BankTX> transactions = txManager.Search(id, true);
+            IList<BankTXModel> transactions = txManager.Search(id, true);
 
             return transactions.ToList();
         }
@@ -35,9 +35,9 @@ namespace SynthenticFinancialManager.Controllers
         /// </summary>
         /// <param name="bankModel"></param>
         [Authorize(Roles = "Administrator, Assistant")]
-        public void Post([FromBody]BankTX bankModel)
+        public void Post([FromBody]BankTXModel bankModel)
         {
-            BankTX transaction = txManager.Create(bankModel);
+            BankTXModel transaction = txManager.Create(bankModel);
         }
 
         // DELETE api/values/5

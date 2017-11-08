@@ -36,3 +36,4 @@ C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManag
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManager\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManager\obj\Debug\SynthenticFinancialManager.dll
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManager\obj\Debug\SynthenticFinancialManager.pdb
+C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManager\obj\Debug\SynthenticFinancialManager.csprojResolveAssemblyReference.cache

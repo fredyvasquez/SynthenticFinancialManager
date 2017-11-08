@@ -33,7 +33,7 @@ namespace SynthenticFinancialManager.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            BankTX banktx = txManager.Details(id);
+            BankTXModel banktx = txManager.Details(id);
             if (banktx == null)
             {
                 return HttpNotFound();
@@ -54,7 +54,7 @@ namespace SynthenticFinancialManager.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Assistant, Administrator")]
-        public ActionResult Create(BankTX banktx)
+        public ActionResult Create(BankTXModel banktx)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace SynthenticFinancialManager.Controllers
         [Authorize(Roles = "Administrator, Superintendent")]
         public ActionResult Edit(int id = 0)
         {
-            BankTX banktx = txManager.Get(id);
+            BankTXModel banktx = txManager.Get(id);
             if (banktx == null)
             {
                 return HttpNotFound();
@@ -83,7 +83,7 @@ namespace SynthenticFinancialManager.Controllers
 
         [HttpPost]
         [Authorize(Roles = "Administrator, Superintendent")]
-        public ActionResult Edit(BankTX banktx)
+        public ActionResult Edit(BankTXModel banktx)
         {
             if (ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace SynthenticFinancialManager.Controllers
         [Authorize(Roles = "Administrator, Superintendent")]
         public ActionResult MarkAsFraud(int id)
         {
-            BankTX banktx = txManager.Get(id);
+            BankTXModel banktx = txManager.Get(id);
 
             return MarkAsFraud(banktx);
         }
@@ -107,7 +107,7 @@ namespace SynthenticFinancialManager.Controllers
         // GET: /BankTx/Edit/5
         [HttpPost]
         [Authorize(Roles = "Administrator, Superintendent")]
-        public ActionResult MarkAsFraud(BankTX banktx)
+        public ActionResult MarkAsFraud(BankTXModel banktx)
         { 
             //BankTX banktx = txManager.Get(id);
             if (banktx == null)
@@ -115,8 +115,8 @@ namespace SynthenticFinancialManager.Controllers
                 return HttpNotFound();
             }
 
-            banktx.isFlaggedFraud = !banktx.isFlaggedFraud;
-            banktx.isFraud = !banktx.isFraud;
+            banktx.IsFlaggedFraud = !banktx.IsFlaggedFraud;
+            banktx.IsFraud = !banktx.IsFraud;
             txManager.Get(banktx);
 
             //return View(banktx);
@@ -128,7 +128,7 @@ namespace SynthenticFinancialManager.Controllers
         [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int id = 0)
         {
-            BankTX banktx = txManager.Get(id);
+            BankTXModel banktx = txManager.Get(id);
             if (banktx == null)
             {
                 return HttpNotFound();

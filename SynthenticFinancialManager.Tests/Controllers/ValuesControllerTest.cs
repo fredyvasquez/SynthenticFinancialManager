@@ -20,33 +20,33 @@ namespace SynthenticFinancialManager.Tests.Controllers
         {
             string nameForTest = "APIGetTest" + System.DateTime.Now.Ticks;
             // Arrange
-            BankTX bankModel = new BankTX()
+            BankTXModel bankModel = new BankTXModel()
             {
-                amount = 123456,
-                nameDest = nameForTest,
-                nameOrig = "APIGetTest",
-                newbalanceDest = 1234,
-                oldbalanceDest = 1233,
-                oldbalanceOrg = 1232,
-                newbalanceOrig = 1231,
-                step = 1,
-                type = "APIGetTest",
-                isFlaggedFraud = true,
-                isFraud = true
+                Amount = 123456,
+                NameDest = nameForTest,
+                NameOrig = "APIGetTest",
+                NewbalanceDest = 1234,
+                OldbalanceDest = 1233,
+                OldbalanceOrg = 1232,
+                NewbalanceOrig = 1231,
+                Step = 1,
+                Type = "APIGetTest",
+                IsFlaggedFraud = true,
+                IsFraud = true
             };
 
             BankTxManager txManager = new BankTxManager();
-            BankTX bankModelResult = txManager.Create(bankModel);
+            BankTXModel bankModelResult = txManager.Create(bankModel);
 
             ValuesController controller = new ValuesController();
 
             // Act
-            IList<BankTX> result = controller.Get(bankModelResult.nameDest);
+            IList<BankTXModel> result = controller.Get(bankModelResult.NameDest);
 
             // Assert
             Assert.IsNotNull(result);
             Assert.AreEqual(1, result.Count());
-            Assert.AreEqual(nameForTest, (result.ElementAt(0) as BankTX).nameDest);
+            Assert.AreEqual(nameForTest, (result.ElementAt(0) as BankTXModel).NameDest);
 
         }
 
@@ -56,19 +56,19 @@ namespace SynthenticFinancialManager.Tests.Controllers
         {
             // Arrange
             ValuesController controller = new ValuesController();
-            BankTX bankModel = new BankTX()
+            BankTXModel bankModel = new BankTXModel()
             {
-                amount = 123456,
-                nameDest = "APIPostTest",
-                nameOrig = "APIPostTest",
-                newbalanceDest = 1234,
-                oldbalanceDest = 1233,
-                oldbalanceOrg = 1232,
-                newbalanceOrig = 1231,
-                step = 1,
-                type = "APIPostTest",
-                isFlaggedFraud = true,
-                isFraud = true
+                Amount = 123456,
+                NameDest = "APIPostTest",
+                NameOrig = "APIPostTest",
+                NewbalanceDest = 1234,
+                OldbalanceDest = 1233,
+                OldbalanceOrg = 1232,
+                NewbalanceOrig = 1231,
+                Step = 1,
+                Type = "APIPostTest",
+                IsFlaggedFraud = true,
+                IsFraud = true
             };
 
             // Act
@@ -76,9 +76,9 @@ namespace SynthenticFinancialManager.Tests.Controllers
 
             // Assert
             BankTxManager txManager = new BankTxManager();
-            BankTX bankModelResult = txManager.Get(bankModel.TxId);
+            BankTXModel bankModelResult = txManager.Get(bankModel.TxId);
             Assert.IsNotNull(bankModelResult);
-            Assert.AreEqual(bankModelResult.nameDest, bankModel.nameDest);
+            Assert.AreEqual(bankModelResult.NameDest, bankModel.NameDest);
         }
 
         [TestMethod]
@@ -86,19 +86,19 @@ namespace SynthenticFinancialManager.Tests.Controllers
         {
             // Arrange
             ValuesController controller = new ValuesController();
-            BankTX bankModel = new BankTX()
+            BankTXModel bankModel = new BankTXModel()
             {
-                amount = 123456,
-                nameDest = "APIDeleteTest",
-                nameOrig = "APIDeleteTest",
-                newbalanceDest = 1234,
-                oldbalanceDest = 1233,
-                oldbalanceOrg = 1232,
-                newbalanceOrig = 1231,
-                step = 1,
-                type = "APIDeleteTest",
-                isFlaggedFraud = true,
-                isFraud = true
+                Amount = 123456,
+                NameDest = "APIDeleteTest",
+                NameOrig = "APIDeleteTest",
+                NewbalanceDest = 1234,
+                OldbalanceDest = 1233,
+                OldbalanceOrg = 1232,
+                NewbalanceOrig = 1231,
+                Step = 1,
+                Type = "APIDeleteTest",
+                IsFlaggedFraud = true,
+                IsFraud = true
             };
             controller.Post(bankModel);
 
@@ -107,7 +107,7 @@ namespace SynthenticFinancialManager.Tests.Controllers
 
             // Assert
             BankTxManager txManager = new BankTxManager();
-            BankTX bankModelResult = txManager.Get(bankModel.TxId);
+            BankTXModel bankModelResult = txManager.Get(bankModel.TxId);
             Assert.IsNull(bankModelResult);
         }
     }
