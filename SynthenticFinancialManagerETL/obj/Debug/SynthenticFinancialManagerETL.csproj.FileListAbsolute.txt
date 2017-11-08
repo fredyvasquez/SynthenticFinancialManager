@@ -25,3 +25,4 @@ C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManag
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.csprojResolveAssemblyReference.cache
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.exe
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.pdb
+C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\PS_log.csv

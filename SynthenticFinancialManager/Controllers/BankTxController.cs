@@ -116,6 +116,7 @@ namespace SynthenticFinancialManager.Controllers
             }
 
             banktx.isFlaggedFraud = !banktx.isFlaggedFraud;
+            banktx.isFraud = !banktx.isFraud;
             txManager.Get(banktx);
 
             //return View(banktx);

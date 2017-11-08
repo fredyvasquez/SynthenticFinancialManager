@@ -8,11 +8,19 @@ using System.Web.Http;
 
 namespace SynthenticFinancialManager.Controllers
 {
+    /// <summary>
+    /// Management of the REST Api
+    /// </summary>
     public class ValuesController : ApiController
     {
         private Business.BankTxManager txManager = new Business.BankTxManager();
 
         // GET api/values/5
+        /// <summary>
+        /// Performs a search in the transaction database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [Authorize(Roles = "Administrator, Superintendent")]
         public IList<BankTX> Get(string id)
         {
@@ -22,6 +30,10 @@ namespace SynthenticFinancialManager.Controllers
         }
 
         // POST api/values
+        /// <summary>
+        /// Creates a new transaction in the database
+        /// </summary>
+        /// <param name="bankModel"></param>
         [Authorize(Roles = "Administrator, Assistant")]
         public void Post([FromBody]BankTX bankModel)
         {
@@ -29,6 +41,10 @@ namespace SynthenticFinancialManager.Controllers
         }
 
         // DELETE api/values/5
+        /// <summary>
+        /// Removes a transaction from the database
+        /// </summary>
+        /// <param name="id"></param>
         [Authorize(Roles = "Administrator")]
         public void Delete(int id)
         {
