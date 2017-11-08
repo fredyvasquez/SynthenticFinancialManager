@@ -13,3 +13,6 @@
 11. Execute the exe file with one argument, that is the path to the csv file, pe: "SynthenticFinancialManagerETL.exe PS_log.csv"
 12. Open the website http://localhost/SynthenticFinancialManager/
 13. Login with the different users: AssistantUser, ManagerUser, SuperintendentUser, AdministratorUser (password: 123456)
+
+ER Diagram and Classes diagram
+https://docs.google.com/presentation/d/1NUXFFO8O9tva5oNymXn0NyQEpoKPnk_yL2-d3uwfkfg/edit?usp=sharing
