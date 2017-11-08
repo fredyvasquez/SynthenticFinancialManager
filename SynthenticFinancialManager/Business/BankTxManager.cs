@@ -36,8 +36,8 @@ namespace SynthenticFinancialManager.Business
             {
                 transactions = transactions.Where(s => s.isFraud.Equals(fraud == true));
             }
-            else
-                transactions = transactions.Where(s => s.TxId.Equals(-1));
+            //else
+            //    transactions = transactions.Where(s => s.TxId.Equals(-1));
 
             return transactions.ToList();
         }
@@ -60,7 +60,7 @@ namespace SynthenticFinancialManager.Business
             db.SaveChanges();
 
             return banktx;
-        }
+            }
 
         //
         // GET: /BankTx/Edit/5

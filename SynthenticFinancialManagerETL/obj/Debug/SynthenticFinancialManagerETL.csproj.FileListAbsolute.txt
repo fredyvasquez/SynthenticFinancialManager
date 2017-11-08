@@ -1,9 +1,6 @@
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\SynthenticFinancialManagerETL.exe.config
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\SynthenticFinancialManagerETL.exe
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\SynthenticFinancialManagerETL.pdb
-C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.csprojResolveAssemblyReference.cache
-C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.exe
-C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.pdb
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\SynthenticFinancialManager.dll
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\System.Web.Mvc.dll
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\EntityFramework.dll
@@ -18,8 +15,6 @@ C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManag
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\DotNetOpenAuth.OpenId.dll
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\Antlr3.Runtime.dll
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\SynthenticFinancialManager.pdb
-C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\System.Web.Mvc.xml
-C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\EntityFramework.xml
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\Microsoft.Web.WebPages.OAuth.xml
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\DotNetOpenAuth.AspNet.xml
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\DotNetOpenAuth.Core.xml
@@ -27,3 +22,6 @@ C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManag
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\DotNetOpenAuth.OAuth.xml
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\bin\Debug\DotNetOpenAuth.OpenId.xml
+C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.csprojResolveAssemblyReference.cache
+C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.exe
+C:\Users\fvasquez\documents\visual studio 2012\Projects\SynthenticFinancialManager\SynthenticFinancialManagerETL\obj\Debug\SynthenticFinancialManagerETL.pdb

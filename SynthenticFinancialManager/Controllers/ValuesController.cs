@@ -23,9 +23,9 @@ namespace SynthenticFinancialManager.Controllers
 
         // POST api/values
         [Authorize(Roles = "Administrator, Assistant")]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]BankTX bankModel)
         {
-            BankTX transaction = txManager.Create(new BankTX());
+            BankTX transaction = txManager.Create(bankModel);
         }
 
         // DELETE api/values/5

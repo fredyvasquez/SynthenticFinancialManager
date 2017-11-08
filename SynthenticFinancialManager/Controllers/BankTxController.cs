@@ -17,9 +17,6 @@ namespace SynthenticFinancialManager.Controllers
         //private TXContext db = new TXContext();
         private Business.BankTxManager txManager = new Business.BankTxManager();
 
-
-
-
         //IsFraud
         //NameDest
         //TransactionDate
@@ -27,24 +24,6 @@ namespace SynthenticFinancialManager.Controllers
         [Authorize(Roles = "Manager, Administrator, Superintendent")]
         public ActionResult Index(string searchString, bool? fraud)
         {
-            //var transactions = from m in db.BankTXs
-            //             select m;
-
-            //if (!String.IsNullOrEmpty(searchString) && fraud == true)
-            //{
-            //    transactions = transactions.Where(s => s.nameDest.Contains(searchString) && s.isFraud.Equals(fraud == true));
-            //}
-            //if (!String.IsNullOrEmpty(searchString) && fraud != true)
-            //{
-            //    transactions = transactions.Where(s => s.nameDest.Contains(searchString));
-            //}
-            //else if (fraud == true)
-            //{
-            //    transactions = transactions.Where(s => s.isFraud.Equals(fraud == true));
-            //}
-            //else
-            //    transactions = transactions.Where(s => s.TxId.Equals(-1));
-
             var transactions = txManager.Search(searchString, fraud);
             return View( transactions.ToList() );
         }
@@ -112,6 +91,35 @@ namespace SynthenticFinancialManager.Controllers
                 return RedirectToAction("Index");
             }
             return View(banktx);
+        }
+
+        //
+        // GET: /BankTx/Edit/5
+        [Authorize(Roles = "Administrator, Superintendent")]
+        public ActionResult MarkAsFraud(int id)
+        {
+            BankTX banktx = txManager.Get(id);
+
+            return MarkAsFraud(banktx);
+        }
+
+        //
+        // GET: /BankTx/Edit/5
+        [HttpPost]
+        [Authorize(Roles = "Administrator, Superintendent")]
+        public ActionResult MarkAsFraud(BankTX banktx)
+        { 
+            //BankTX banktx = txManager.Get(id);
+            if (banktx == null)
+            {
+                return HttpNotFound();
+            }
+
+            banktx.isFlaggedFraud = !banktx.isFlaggedFraud;
+            txManager.Get(banktx);
+
+            //return View(banktx);
+            return RedirectToAction("Index");
         }
 
         //
